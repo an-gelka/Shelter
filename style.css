@@ -263,7 +263,8 @@ img {
 
 @media (max-width: 320px) {
   .title-h1 {
-    padding: 0 50px;
+    max-width: 80%;
+    margin: auto;
     font-size: 2.5em;
     letter-spacing: 0.06em;
     text-align: center;    
@@ -321,14 +322,40 @@ img {
   .img-block-not-only {
     max-width: 260px;
     margin-left: 40px;
-
   }
 }
 
+/*----------ABOUT-----------------*/
+
 .inner-about {
-  row-gap: 120px;
-  padding: 80px 175px 100px 175px;
+  row-gap: 80px;
+  column-gap: 120px;
+  justify-content: center;
+  padding: 80px 0 100px 0;
   box-sizing: content-box;
+}
+
+@media (max-width: 320px) {
+  .inner-about {
+    padding: 42px 0 42.4px;
+    row-gap: 42px;
+  }
+}
+
+.img-block-about {
+  max-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .img-block-about {
+    order: 2;
+  }
+}
+
+@media (max-width: 320px) {
+  .img-block-about {
+    max-width: 260px;
+  }
 }
 
 .title {
@@ -337,18 +364,38 @@ img {
   font-weight: 400;
   font-size: 3.5em;
   line-height: 130%;
-  /* 45px */
   letter-spacing: 0.06em;
   color: #545454;
 }
 
+@media (max-width: 320px) {
+  .title {
+    max-width: 80%;
+    margin: 0 auto;
+    font-size: 2.5em;
+    text-align: center;
+  }
+}
+
 .content-about {
-  column-gap: 25px;
-  width: 430px;
-  height: 380px;
-  margin: 14px 0;
+  max-width: 430px;
+  row-gap: 25px;
   color: #4C4C4C;
 }
+
+@media (max-width: 320px) {
+  .content-about {
+    max-width: 90%;
+    row-gap: 23px;
+  }
+
+  .text-about {
+    text-align: justify;
+  }
+}
+
+
+/*--------OUR FRIENDS-------------*/
 
 .our-friends {
   background: #F6F6F6;
@@ -359,17 +406,41 @@ img {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: calc(697px + 180px);
   padding: 80px 0 100px 0;
+}
+
+@media (max-width: 320px) {
+  .box {
+    padding: 42px 0;
+  }
 }
 
 .slider-box {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
-  width: 93.75%;
-  height: 697px;
-  row-gap: 53px;
+  /* width: 93.75%; */
+  width: 100%;
+  column-gap: 53px;
+  padding: 60px 40px;
+}
+
+@media (max-width: 768px) {
+  .slider-box {
+    padding: 60px 30px;
+    column-gap: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .slider-box {
+    padding: 42px 10px;
+    flex-direction: column-reverse;
+    row-gap: 18px;
+    justify-content: center;
+    align-items: center;
+
+  }
 }
 
 .slider-cards-box {
@@ -377,21 +448,37 @@ img {
   justify-content: space-between;
   align-items: center;
   column-gap: 90px;
-  flex-direction: row;
-  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .slider-cards-box {
+    column-gap: 40px;
+  }
 }
 
 .box-card {
   display: flex;
   flex-direction: column;
+  row-gap: 28px;
   justify-content: space-between;
   align-items: center;
   width: 270px;
-  height: 435px;
   background: #FAFAFA;
   border-radius: 9px;
   overflow: hidden;
   transition: background-color linear 0.6s, box-shadow linear 0.3s;
+}
+
+@media (max-width: 768px) {
+  .box-card:last-child{
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .box-card:not(:first-child) {
+    display: none;
+  }
 }
 
 .box-card:hover {
@@ -408,20 +495,35 @@ img {
   font-weight: 400;
   font-size: 2em;
   line-height: 115%;
-  /*23px*/
   letter-spacing: 0.055em;
   color: #545454;
 }
 
 .btn-card {
-  width: 187px;
   margin-bottom: 30px;
+  padding: 15px 45px;
   border: 2px solid #F1CDB3;
   background-color: transparent;
   transition: background-color linear 0.6s;
 }
 
+.slider-btn-box {
+  position: relative;
+  width: 52px;
+  height: 52px;
+}
+
+@media (max-width: 320px) {
+  .slider-btn-box {
+    width: auto;
+    display: inline-flex;
+    justify-content: space-between;
+    column-gap: 80px;
+  }
+}
+
 .btn-arrow {
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -431,6 +533,31 @@ img {
   border: 2px solid #F1CDB3;
   border-radius: 100%;
   transition: background-color linear 0.6s;
+}
+
+@media (max-width: 320px) {
+  .btn-arrow {
+    position: relative;
+  }
+}
+
+
+.btn-arrow-next {
+  position: absolute;
+  margin-left: calc(1096px + 53px ) ;
+}
+
+@media (max-width: 768px) {
+  .btn-arrow-next {
+    margin-left: calc(580px + 24px + 52px);
+  }
+}
+
+@media (max-width: 320px) {
+  .btn-arrow-next {
+    position: relative;
+    margin: 0;
+  }
 }
 
 .btn-arrow:hover {
@@ -448,9 +575,9 @@ img {
   transform: rotate(180deg);
 }
 
-.btn-large {
+/* .btn-large {
   width: 261px;
-}
+} */
 
 .box-help {
   height: calc(431px + 80px + 100px);
