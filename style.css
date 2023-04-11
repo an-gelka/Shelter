@@ -630,6 +630,12 @@ img {
     padding: 0 5px;
     column-gap: 30px;
     row-gap: 29px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 450px) {
+  .box-list-help {
     justify-content: start;
   }
 }
