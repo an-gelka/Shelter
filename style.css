@@ -453,7 +453,7 @@ img {
   max-width: 82.5%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .slider-cards-box {
     column-gap: 40px;
   }
@@ -634,7 +634,7 @@ img {
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 320px) {
   .box-list-help {
     justify-content: start;
   }
