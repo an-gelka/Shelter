@@ -648,30 +648,62 @@ img {
     }
 }
 
+/*------------DONATION------------*/
+
 #in-addition {
   background-color: #F6F6F6;
 }
 
 .inner-donation {
   column-gap: 30px;
-  max-width: 915px;
-  min-height: 282px;
-  padding: 80px 183px 100px 182px;
-  box-sizing: content-box;
+  justify-content: center;
+  padding: 78px 0 100px 0;
+}
+
+@media (max-width: 768px) {
+  .inner-donation {
+    flex-direction: column-reverse;
+    row-gap: 60px;
+  }
+}
+
+@media (max-width: 320px) {
+  .inner-donation {
+    padding: 42px 0;
+    row-gap: 42px;
+  }
 }
 
 .content-donation {
   max-width: 380px;
-  max-height: 282px;
-  margin: 0;
+  row-gap: 20px;
   font-family: 'Georgia';
   font-weight: 400;
   color: #545454;
 }
 
+@media (max-width: 320px) {
+  .content-donation {
+    max-width: 100%;
+    align-items: center;
+  }
+}
+
 .img-block-donation {
-  height: 261px;
+  max-width: 505px;
   margin: 11px 0 10px 0;
+}
+
+@media (max-width: 768px) {
+  .img-block-donation {
+    margin: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .img-block-donation {
+    max-width: 260px;
+  }
 }
 
 .tagline {
@@ -681,21 +713,27 @@ img {
   letter-spacing: 0.06em;
 }
 
+@media (max-width: 320px)  {
+  .tagline {
+    line-height: 160%;
+    letter-spacing: 0;
+    text-align: center;
+  }
+}
+
 .btn-card-number {
-  display: flex;
+  display: inline-flex;
   justify-content: space-between;
   align-items: center;
   column-gap: 15px;
-  width: 349px;
-  height: 43px;
-  padding: 0 15px;
+  padding: 10px 15px;
   background: #F1CDB3;
   border-radius: 9px;
   transition: background-color linear 0.6s;
 }
 
 .icon-box {
-  display: block;
+  display: inline-block;
   margin: 0;
   height: 23px;
 }
@@ -705,12 +743,18 @@ img {
   font-weight: 400;
   font-size: 1.5em;
   line-height: 115%;
-  letter-spacing: 0.055em;
+  letter-spacing: 0.06em;
   color: #545454;
 }
 
+@media (max-width: 320px) {
+  .number {
+    font-size: 1.25em;
+    letter-spacing: 0;
+  }
+}
+
 .desk {
-  font-family: 'Arial';
   font-style: italic;
   font-weight: 400;
   font-size: 1.2em;
@@ -718,26 +762,60 @@ img {
   color: #B2B2B2;
 }
 
+@media (max-width: 320px) {
+  .desk {
+    text-align: justify;
+    padding: 0 20px;
+  }
+}
+
+/*------------FOOTER----------------------*/
+
 .footer {
-  background: radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
+  background: url("assets/svg/noise_transparent@2x.svg"),  radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
 }
 
 .inner-footer {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   row-gap: 160px;
   padding-top: 40px;
-  min-height: 350px;
+}
+
+@media (max-width: 768px) {
+  .inner-footer {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    row-gap: 65px;
+  }
+}
+
+@media (max-width: 320px) {
+  .inner-footer {
+    row-gap: 40px;
+  }
 }
 
 .box-content-footer {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   column-gap: 160px;
-  max-width: 740px;
-  max-height: 234px;
+  /* max-width: 740px; */
+}
+
+@media (max-width: 768px) {
+  .box-content-footer {
+    column-gap: 60px;
+  }
+}
+
+@media (max-width: 320px) {
+  .box-content-footer {
+    flex-direction: column;
+    row-gap: 40px;
+    align-items: center;
+  }
 }
 
 .content-footer {
@@ -745,20 +823,47 @@ img {
   flex-direction: column;
   align-items: start;
   justify-content: space-between;
+  row-gap: 33px;
   max-width: 302px;
-  height: 234px;
-  margin-top: 16px;
-  margin-bottom: 60px;
+  padding-top: 16px;
+  padding-bottom: 60px;
 }
 
 .content-footer:first-child {
   width: 278px;
+  row-gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .content-footer {
+    padding: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .content-footer {
+    align-items: center;
+  }
+
+  .content-footer:not(:first-child) {
+    row-gap: 40px;
+    align-items: start;
+  }
 }
 
 .title-footer {
-  width: 278px;
-  height: 90px;
+  max-width: 278px;
   letter-spacing: 2px;
+}
+
+@media (max-width: 320px) {
+  .title-footer {
+    letter-spacing: 0.06em;
+    
+  }
+  .content-footer:first-child > .title-footer {
+    max-width: 100%;
+  }
 }
 
 footer .title {
@@ -779,9 +884,17 @@ footer .title {
 
 .social-icon-box {
   margin-right: 20px;
-  min-width: 22px;
   max-width: 40px;
-  max-height: 32px;
+}
+
+.img-block-footer {
+  max-width: 300px;
+}
+
+@media (max-width: 320px) {
+  .img-block-footer {
+    max-width: 260px;
+  }
 }
 
 /*--------Our pets page-----------------*/
